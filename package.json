@@ -1,0 +1,26 @@
+{
+  "name": "yshop-api-sdk",
+  "version": "1.0.0",
+  "description": "yShop.pl API v4 sdk",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yshop-pl/yshop-api-sdk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yshop-pl/yshop-api-sdk/issues"
+  },
+  "homepage": "https://github.com/yshop-pl/yshop-api-sdk#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  },
+  "files": ["lib/**/*"]
+}
