@@ -1,5 +1,8 @@
 import axios, {AxiosBasicCredentials, AxiosRequestConfig, AxiosResponse} from "axios";
 import {YShopSdk} from "./index";
+import {NotFoundException} from "./exceptions/NotFoundException";
+import {UnexpectedException} from "./exceptions/UnexpectedException";
+import {BadRequestException} from "./exceptions/BadRequestException";
 
 export type HTTP_METHODS = "GET"|"POST"|"PUT"|"DELETE"
 
@@ -22,9 +25,17 @@ export class HttpClient {
         try {
             const response = await axios(requestConfiguration)
             return response.data
-        }catch (error){
-            // @ts-ignore
-            return error.response
+        }catch (error: any){
+            const errorData = error.response['data']
+            switch (errorData['statusCode']) {
+                case 404:
+                    throw new NotFoundException(errorData['message'])
+                case 400:
+                    throw new BadRequestException(Array.isArray(errorData['message']) ? errorData['message'][0] : errorData['message'])
+                default:
+                    console.log(errorData)
+                    throw new UnexpectedException()
+            }
         }
     }
 }
