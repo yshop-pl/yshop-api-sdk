@@ -16,6 +16,10 @@
 	- [Initialize transaction](#initialize-transaction)
 	- [Get transaction](#get-transaction)
 
+### Installation via npm
+```bash
+npm i yshop-api-sdk
+```
 ### Initialize sdk
 ```ts
 // ApiVersion is optional and defaults to v4
