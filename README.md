@@ -2,6 +2,7 @@
 
 ## Contents
 - [Initialize sdk](#initialize-sdk)
+- [Installation via npm](#installation-via-npm)
 - [Shop Module](#shop-module)
 	- [Get info about current shop](#get-info-about-current-shop)
 	- [List all servers](#list-all-servers)
